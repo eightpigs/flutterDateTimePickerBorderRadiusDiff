@@ -1,0 +1,28 @@
+diff --git a/packages/flutter/lib/src/material/time_picker.dart b/packages/flutter/lib/src/material/time_picker.dart
+index f41ebc047..39db2a4bd 100644
+--- a/packages/flutter/lib/src/material/time_picker.dart
++++ b/packages/flutter/lib/src/material/time_picker.dart
+@@ -848,7 +848,10 @@ class _TimePickerHeader extends StatelessWidget {
+       width: width,
+       height: height,
+       padding: padding,
+-      color: backgroundColor,
++      decoration: BoxDecoration(
++        color: backgroundColor,
++        borderRadius: BorderRadius.only(topLeft: Radius.circular(6), topRight: Radius.circular(6))
++      ),
+       child: CustomMultiChildLayout(
+         delegate: _TimePickerHeaderLayout(orientation, format),
+         children: format.pieces
+@@ -1656,7 +1659,10 @@ class _TimePickerDialogState extends State<_TimePickerDialog> {
+           );
+ 
+           final Widget pickerAndActions = Container(
+-            color: theme.dialogBackgroundColor,
++            decoration: BoxDecoration(
++              color: theme.dialogBackgroundColor,
++              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(6), bottomRight: Radius.circular(6))
++            ),
+             child: Column(
+               mainAxisSize: MainAxisSize.min,
+               children: <Widget>[

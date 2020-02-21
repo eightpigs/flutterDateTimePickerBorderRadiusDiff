@@ -1,0 +1,40 @@
+diff --git a/packages/flutter/lib/src/material/date_picker.dart b/packages/flutter/lib/src/material/date_picker.dart
+index 9c63ae25b..c34be9497 100644
+--- a/packages/flutter/lib/src/material/date_picker.dart
++++ b/packages/flutter/lib/src/material/date_picker.dart
+@@ -144,7 +144,10 @@ class _DatePickerHeader extends StatelessWidget {
+ 
+     return Container(
+       padding: padding,
+-      color: backgroundColor,
++      decoration: BoxDecoration(
++          color: backgroundColor,
++          borderRadius: BorderRadius.only(topLeft: Radius.circular(6), topRight: Radius.circular(6))
++      ),
+       child: Column(
+         mainAxisAlignment: mainAxisAlignment,
+         crossAxisAlignment: CrossAxisAlignment.start,
+@@ -1012,7 +1015,10 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
+           switch (orientation) {
+             case Orientation.portrait:
+               return Container(
+-                color: theme.dialogBackgroundColor,
++                decoration: BoxDecoration(
++                  color: theme.dialogBackgroundColor,
++                  borderRadius: BorderRadius.all(Radius.circular(6)),
++                ),
+                 child: Column(
+                   mainAxisSize: MainAxisSize.min,
+                   crossAxisAlignment: CrossAxisAlignment.stretch,
+@@ -1025,7 +1031,10 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
+               );
+             case Orientation.landscape:
+               return Container(
+-                color: theme.dialogBackgroundColor,
++                decoration: BoxDecoration(
++                  color: theme.dialogBackgroundColor,
++                  borderRadius: BorderRadius.all(Radius.circular(6)),
++                ),
+                 child: Row(
+                   mainAxisSize: MainAxisSize.min,
+                   crossAxisAlignment: CrossAxisAlignment.stretch,
